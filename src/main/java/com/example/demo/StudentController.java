@@ -3,10 +3,7 @@ package com.example.demo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -40,5 +37,13 @@ public class StudentController {
 
         System.out.println(all);
         return all;
+    }
+
+    @GetMapping("/find/{email}")
+    @ResponseBody
+    public  List findByEmail(@PathVariable(value = "email") String email){
+        System.out.println(email);
+        List records = studentRepository.findStudentsByEmailEquals(email);
+        return records;
     }
 }
