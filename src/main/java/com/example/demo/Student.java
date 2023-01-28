@@ -1,15 +1,18 @@
 package com.example.demo;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "student")
 public class Student {
+    @Column
     @Id
     private Integer id;
 
+    @Column
     private String name;
 
+    @Column
     private String email;
 
     public void setId(Long id) {
