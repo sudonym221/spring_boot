@@ -1,6 +1,6 @@
 package com.example.demo.students.Service;
 
-import com.example.demo.students.Models.Student;
+import com.example.demo.students.Model.Student;
 import com.example.demo.students.Repository.StudentRepository;
 import org.springframework.stereotype.Service;
 

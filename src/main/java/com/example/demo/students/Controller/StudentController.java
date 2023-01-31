@@ -1,9 +1,7 @@
 package com.example.demo.students.Controller;
 
-import com.example.demo.students.Models.Student;
-import com.example.demo.students.Repository.StudentRepository;
+import com.example.demo.students.Model.Student;
 import com.example.demo.students.Service.StudentService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,15 +11,15 @@ import java.util.List;
 public class StudentController {
     StudentService studentService;
 
-    @GetMapping("/")                // Home page
+    @GetMapping("/")                // Home page [Read]
     @ResponseBody
     public String hello(){
         return "Hello";
     }
 
-    @PostMapping("/register")      // Create a student record
+    @PostMapping("/register")      // Create a student record [Create]
     @ResponseBody
-    public String register(
+    public String registerStudent(
             @RequestBody Student student
     ){
         studentService.registerStudent(student);
